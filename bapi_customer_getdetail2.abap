@@ -37,4 +37,19 @@ data: lv_customerno            type kunnr value '0000000045',
 data: gt_customerbankdetail type standard table of bapicustomer_02,
       gt_customeribandetail type standard table of bapicustomer_03,
       gt_customersepadetail type standard table of bapicustomer_06.
+      
+
+call function 'BAPI_CUSTOMER_GETDETAIL2'
+  exporting
+    customerno            = lv_customerno    " Customer
+*   companycode           =     " Company code
+  importing
+    customeraddress       = lv_customeraddress    " Address Data
+    customergeneraldetail = lv_customergeneraldetail    " General data
+    customercompanydetail = lv_customercompanydetail    " Company code-specific data
+    return                = gt_return    " Return code
+  tables
+    customerbankdetail    = gt_customerbankdetail   " Bank data
+    customeribandetail    = gt_customeribandetail
+    customersepadetail    = gt_customersepadetail.
 
