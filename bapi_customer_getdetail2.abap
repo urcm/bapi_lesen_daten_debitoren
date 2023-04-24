@@ -52,4 +52,15 @@ call function 'BAPI_CUSTOMER_GETDETAIL2'
     customerbankdetail    = gt_customerbankdetail   " Bank data
     customeribandetail    = gt_customeribandetail
     customersepadetail    = gt_customersepadetail.
+    
+    
+cl_demo_output=>write_data( lv_customerno ).
+cl_demo_output=>write_data( lv_customeraddress ).
+cl_demo_output=>write_data( lv_customergeneraldetail ).
+cl_demo_output=>write_data( lv_customercompanydetail ).
+cl_demo_output=>write_data( gt_return ).
+cl_demo_output=>write_data( gt_customerbankdetail ).
+cl_demo_output=>write_data( gt_customeribandetail ).
+cl_demo_output=>write_data( gt_customersepadetail ).
+cl_demo_output=>display(  ).
 
